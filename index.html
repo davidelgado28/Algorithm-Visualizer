@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AlgoVisualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Algorithm Visualizer</h1>
+  <p>Visualize ordenações, pathfinding e árvores BST - passo a passo</p>
+</header>
+<div class="controls">
+  <div class="group">
+    <select id="category">
+      <option value="sorting">Ordenação</option>
+      <option value="pathfinding">Pathfinding</option>
+      <option value="tree">Árvore BST</option>
+    </select>
+    <select id="algorithm"></select>
+  </div>
+  <div class="group">
+    <button id="playBtn" class="primary">▶ Iniciar</button>
+    <button id="stepBtn" disabled>⏭ Passo</button>
+    <button id="resetBtn">↺ Resetar</button>
+  </div>
+  <div class="group">
+    <label for="speed" class="small">Velocidade</label>
+    <input type="range" id="speed" min="1" max="60" value="30">
+  </div>
+  <div class="group" id="pathTools" style="display:none">
+    <button id="wallBtn">Parede</button>
+    <button id="startBtn">Início</button>
+    <button id="endBtn">Fim</button>
+    <button id="mazeBtn">Labirinto</button>
+  </div>
+  <div class="group" id="treeTools" style="display:none">
+    <input type="number" id="nodeValue" placeholder="Valor" min="1" max="99">
+    <button id="insertBtn" class="primary">Inserir</button>
+    <button id="randomTreeBtn">Aleatória</button>
+  </div>
+</div>
+<div id="statusBar">
+  <span>Comparações: <b id="comparisons">0</b></span>
+  <span>Trocas: <b id="swaps">0</b></span>
+  <span>Nós visitados: <b id="visited">0</b></span>
+  <span>Custo do caminho: <b id="cost">—</b></span>
+  <div class="legend" id="legend"></div>
+</div>
+<div id="message"></div>
+<div id="stage"><canvas id="canvas"></canvas></div>
+<script src="script.js"></script>
+</body>
+</html>
